@@ -1,0 +1,267 @@
+#cloudsbg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+}
+
+#local-time {
+    text-align: right;
+    position: absolute;
+    right: 10px;
+}
+
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+}
+
+#sw {
+    position: absolute;
+    top: 150px;
+    left: 60px;
+    width: 500px;
+}
+
+#yellow {
+    position: absolute;
+    top: 250px;
+    left: 600px;
+    width: calc(100vw - 600px);
+    height: 10px;
+    background-color: yellow;
+}
+
+.ad {
+    height: 100px;
+    width: 42vw;
+    position: absolute;
+    top: 30px;
+}
+
+#ad1 {
+    left: 5vw;
+
+}
+
+#ad2 {
+    left: 52vw
+}
+
+#searchInput {
+    position: absolute;
+    top: 180px;
+    left: 65vw;
+    width: 25vw;
+}
+
+#searchButton {
+    position: absolute;
+    top: 180px;
+    left: 90vw;
+
+}
+
+#grid {
+    position: absolute;
+    top: 400px;
+    left: 20px;
+    width: 100vw;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto;
+    /* justify-items: center; */
+
+}
+
+.gridEl {
+    width: 300px;
+    height: 150px;
+    /* align-items: center; */
+    /* justify-items: center; */
+    margin: 20px;
+    /* background-color: aqua; */
+    position: relative;
+}
+
+
+.gridTitle {
+    background-color: #7a63a5;
+    color: white;
+    padding: 2px 50px 2px 5px;
+    border-radius: 20px 100px 0px 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.gridDate {
+    text-align: right;
+    position: absolute;
+    right: 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.gridDiv {
+    position: relative;
+    background-color: aliceblue;
+    height: 100%;
+    color: black;
+    text-decoration: none;
+    border: 2px solid #7a63a5;
+}
+
+.gridTitlet {
+    font-size: 25px;
+    color: black;
+    text-decoration: none;
+    padding: 5%
+}
+
+.gridImg {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 96%;
+    height: 100px;
+    padding: 0;
+    margin: 0;
+}
+
+.postDiv {
+    position: absolute;
+    top:300px;
+    lefT:30px;
+    padding:100px;
+
+}
+
+.postDiv img {
+    width:80vw;
+}
+
+
+
+@media screen and (max-width:600px) {
+
+    .ad {
+        height: 100px;
+        width: 45vw;
+        position: absolute;
+        top: 30px;
+    }
+    
+    #ad1 {
+        left: 30px;
+    
+    }
+    
+    #ad2 {
+        left: 55vw
+    }
+
+    #sw {
+        position: absolute;
+        top: 150px;
+        left: 30px;
+        width: 200px;
+    }
+
+    #searchInput {
+        position: absolute;
+        top: 180px;
+        left: 65vw;
+        width: 20vw;
+    }
+    
+    #searchButton {
+        position: absolute;
+        top: 180px;
+        left: 85vw;
+    
+    }
+    
+    #grid {
+        position: absolute;
+        top: 230px;
+        left: 10px;
+        width: 100vw;
+        grid-template-columns: auto auto;
+
+
+    }
+
+    .gridEl {
+        width: 40vw;
+        height: 100px;
+        /* align-items: center; */
+        /* justify-items: center; */
+        margin: 20px;
+        /* background-color: aqua; */
+        position: relative;
+    }
+
+    .gridTitle {
+        background-color: #7a63a5;
+        color: white;
+        padding: 2px 15px 2px 5px;
+        border-radius: 20px 100px 0px 0px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size:10px;
+    }
+    
+    
+    .gridDate {
+        text-align: right;
+        position: absolute;
+        right: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size:7px;
+    
+    }
+    
+    .gridDiv {
+        position: relative;
+        background-color: aliceblue;
+        height: 100%;
+        color: black;
+        text-decoration: none;
+        border: 2px solid #7a63a5;
+    }
+    
+    .gridTitlet {
+        font-size: 20px;
+        color: black;
+        text-decoration: none;
+        padding: 5%
+    }
+    
+    .gridImg {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 96%;
+        height: 70px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .postDiv {
+        position: absolute;
+        top:250px;
+        lefT:40px;
+        padding:10px;
+    
+    }
+
+}
