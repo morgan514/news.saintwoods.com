@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% load embed_video_tags %}
+{% block content %}
+  <small style="color:blue;"><i>{{ blogpost.date }}</i></small><br />
+  <span><b><font size="6" style="background-color: white;color: black;">{{ blogpost.title }}</font></b></span><br />
+
+  <p style=" text-align: justify;max-width: 600px;width:90vw;background-color: aliceblue;">{{ blogpost.content|urlize|linebreaksbr }}</p>
+
+  {% if blogpost.blogpostphoto_set.count > 0 %}
+    {% for p in blogpost.blogpostphoto_set.all %}
+      {% if p.imageopt %}
+        <img src="{{ p.imageopt.url }}" style="max-width: 600px;width:90vw;" />
+      {% endif %}
+
+      {% if p.video %}
+        <video style="max-width: 600px;width:90vw;" controls>
+          <source src="{{ p.video.url }}" />
+        </video>
+        <br><br>
+      {% endif %}
+
+      {% if p.embed_youtube %}
+ 
+          {% video p.embed_youtube '333x250' %}
+        <br><br>
+      {% endif %}
+
+    {% endfor %}
+  {% endif %}
+
+
+
+
+  {% if blogpost.photos.count > 0 %}
+  <div class="masonry-container">
+      {% for photo in blogpost.photos.all %}
+          {% if photo.image %}
+          <div class="masonry-item"><img src="{{ photo.image.url }}" ></div>
+          {% endif %}
+      {% endfor %}
+  </div>
+{% endif %}
+
+  <br />
+{% endblock %}

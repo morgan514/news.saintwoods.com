@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+
+  {% if object_list.count == 0 %}
+    <h3><span style="background-color: blue;color:cyan ;">No Result</span></h3>
+  {% elif object_list.count == 1 %}
+    <h3><span style="background-color: blue;color:cyan ;">{{ object_list.count }} Result</span></h3>
+  {% else %}
+    <h3><span style="background-color: blue;color:cyan ;">{{ object_list.count }} Results</span></h3>
+  {% endif %}
+  <div class="table-container">
+    {% for b in object_list %}
+    <a href="{% url 'post' b.slug %}" style="color:black;text-decoration: none;cursor:pointer;">
+      <div class="table-item">
+        <center>
+          <a href="{% url 'post' b.slug %}" style="color:black;text-decoration: none;cursor:pointer;">
+            <i><small style="font-size: 10px; color:blue;">{{ b.date|date:'F j Y' }}</small></i>
+            <br />
+            <b><font size="5" style="background-color: white;">{{ b.title }}</font></b>
+            <br />
+            <img src="{{ b.imageopt.url }}" width="150px" />
+            <br /><br />
+          </a>
+        </center>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+  <br>
+  <div id="pagination" width="222px">
+    {% if blogposts.has_previous %}
+      <a href="?page={{ blogposts.previous_page_number }}">previous</a> |
+    {% else %}
+      <span>previous</span> |
+    {% endif %}
+    {% for i in blogposts.paginator.page_range %}
+      {% if blogposts.number == i %}
+        <span class="paginActi">{{ i }}</span> |
+      {% else %}
+        <a href="?page={{ i }}">{{ i }}</a> |
+      {% endif %}
+    {% endfor %}
+    {% if blogposts.has_next %}
+      <a href="?page={{ blogposts.next_page_number }}">next</a>
+    {% else %}
+      <span>next</span>
+    {% endif %}
+  </div>
+{% endblock %}

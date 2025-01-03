@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+
+  <div class="table-container">
+    {% for b in blogposts %}
+    <a href="{% url 'post' b.slug %}" style="color:blue;text-decoration: none;cursor:pointer;">
+      <div class="table-item">
+        <center>
+          <a href="{% url 'post' b.slug %}" style="color:black;text-decoration: none;cursor:pointer;">
+            {% if forloop.first %}
+            {% if not blogposts.has_previous %}
+              <img src="{% static 'new.gif' %}" width="30px" style="vertical-align: middle;" />
+              {% endif %}
+              {% endif %}
+            <i><small style="font-size: 10px; color:blue;">{{ b.date|date:'F j Y' }}</small></i>
+            <br />
+            <b><font size="5" style="background-color: white;">{{ b.title }}</font></b>
+            <br />
+            <img src="{{ b.imageopt.url }}" width="150px" />
+            <br /><br />
+          </a>
+        </center>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+
+  <br>
+  <div id="pagination" width="222px">
+
+      {% if blogposts.has_previous %}
+        <a href="?page={{ blogposts.previous_page_number }}">previous</a> |
+      {% else %}
+        <span>previous</span> |
+      {% endif %}
+      {% for i in blogposts.paginator.page_range %}
+        {% if blogposts.number == i %}
+          <b><span class="paginActi">{{ i }}</span></b> |
+        {% else %}
+          <a href="?page={{ i }}">{{ i }}</a> |
+        {% endif %}
+      {% endfor %}
+      {% if blogposts.has_next %}
+        <a href="?page={{ blogposts.next_page_number }}">next</a>
+      {% else %}
+        <span>next</span>
+      {% endif %}
+
+
+  </div>
+{% endblock %}

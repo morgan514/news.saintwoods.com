@@ -1,0 +1,149 @@
+{% load static %}
+{% load tz %}
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'style_final.css' %}" />
+    <link rel="icon" href="{% static 'favicon.png' %}" />
+    <title>SW NEWS</title>
+    <meta name="keywords" content="news, saintwoods, SW" />
+    <meta name="author" content="Saintwoods" />
+    <meta name="description" content="News by Saintwoods" />
+    <meta property="og:title" content="SW NEWS" />
+    <meta property="og:type" content="news website" />
+    <meta property="og:url" content="news.saintwoods.com" />
+    <meta property="og:image" content="{% static 'sw-gif-3.gif' %}" />
+    <meta property="og:site_name" content="SW NEWS" />
+    <meta property="og:description" content="News by Saintwoods" />
+    <style>
+      body::before {
+        content: "";
+        background-image: url({% static 'cloud_tile.gif' %});
+        background-repeat: repeat;
+        opacity: 0.4; 
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+    </style>
+  </head>
+  <body>
+    <center>
+      <br />
+      <small>
+        <span style="background-color: yellow;color:red" class="star">★</span>
+        <span style="background-color: yellow;color:red" class="star">★</span>
+        <span style="background-color: yellow;color:red" class="star">★</span>
+        <span style="background-color: yellow;color:red" class="star">★</span>
+        <span style="background-color: yellow;color:red" class="star">★</span>
+        <span style="background-color: yellow;color:red" class="star">★</span>
+        <span style="background-color: yellow;color:red" class="star">★</span>
+        <span style="background-color: yellow;color:red" class="star">★</span>
+        <span style="background-color: yellow;color:red" class="star">★</span>
+        <span style="background-color: yellow;color:red" class="star">★</span>
+        <span style="background-color: yellow;color:red" class="star">★</span>
+        <span style="background-color: yellow;color:red" class="star">★</span>
+        <span style="background-color: yellow;color:red" class="star">★</span>
+        <span style="background-color: yellow;color:red" class="star">★</span>
+        <span style="background-color: yellow;color:red" class="star">★</span>
+        <span style="background-color: yellow;color:red" class="star">★</span>
+        <span style="background-color: yellow;color:red" class="star">★</span>
+        <span style="background-color: yellow;color:red" class="star">★</span>
+        <span style="background-color: yellow;color:red" class="star">★</span>
+        <span style="background-color: yellow;color:red" class="star">★</span>
+      </small>
+      <br />
+      <a href="/">
+        <img src="{% static 'bar27.gif' %}" class="bar" />
+        <br />
+        <img src="{% static 'satellites-04.gif' %}" class="satellite" />
+        <img src="{% static 'sw-gif-3.gif' %}" class="swnews" />
+        <img src="{% static 'globe.gif' %}" class="globe" />
+        <br />
+        <img src="{% static 'bar27.gif' %}" class="bar" /> <br />
+      </a>
+      <small>
+        <span style="background-color: yellow;color:red" class="star">★</span>
+        <span style="background-color: yellow;color:red" class="star">★</span>
+        <span style="background-color: yellow;color:red" class="star">★</span>
+        <span style="background-color: yellow;color:red" class="star">★</span>
+        <span style="background-color: yellow;color:red" class="star">★</span>
+        <span style="background-color: yellow;color:red" class="star">★</span>
+        <span style="background-color: yellow;color:red" class="star">★</span>
+        <span style="background-color: yellow;color:red" class="star">★</span>
+        <span style="background-color: yellow;color:red" class="star">★</span>
+        <span style="background-color: yellow;color:red" class="star">★</span>
+        <span style="background-color: yellow;color:red" class="star">★</span>
+        <span style="background-color: yellow;color:red" class="star">★</span>
+        <span style="background-color: yellow;color:red" class="star">★</span>
+        <span style="background-color: yellow;color:red" class="star">★</span>
+        <span style="background-color: yellow;color:red" class="star">★</span>
+        <span style="background-color: yellow;color:red" class="star">★</span>
+        <span style="background-color: yellow;color:red" class="star">★</span>
+        <span style="background-color: yellow;color:red" class="star">★</span>
+        <span style="background-color: yellow;color:red" class="star">★</span>
+        <span style="background-color: yellow;color:red" class="star">★</span>
+      </small>
+      <br />
+      <br />
+
+      <div class="container-div">
+        <div class="item-div">
+          <img src="{% static 'icon-vodka.png' %}" width="40px" />
+          <br />
+          <font size="-2">
+            <a href="https://vodkabysaintwoods.com/" style="color:blue;">Vodka by<br />Saintwoods</a>
+          </font>
+        </div>
+
+        <div class="item-div">
+          <b><span id="local-time" style="background-color: black;color:white;" class="blinking-text"></span></b>
+          <br />
+          <br />
+          <form action="/search/" method="get">
+            <img src="{% static 'search15.gif' %}" style="vertical-align: middle;image-rendering: pixelated;" />
+            <input name="q" type="text" placeholder="search keyword" />
+            <button type="submit">Search</button><br />
+          </form>
+        </div>
+
+        <div class="item-div">
+          <img src="{% static 'icon-sw.png' %}" width="40px" />
+          <br />
+          <font size="-2">
+            <a href="https://saintwoods.com/" style="color:blue;">Saintwoods<br />Website</a>
+          </font>
+        </div>
+      </div>
+
+      {% block content %}
+
+      {% endblock %}
+
+      <br />
+      <img src="{% static 'barverm.gif' %}" width="333px" />
+      <br />
+      <br />
+      
+      <div style="background-color:black; color:white;width:270px;border: solid 2px white;">
+        <img src="{% static 'rainbow_thinline.gif' %}" width="270px" /><br />
+        <font size="-2">
+          © {% now 'Y' %} Copyright © <a href="https://saintwoods.com/" target="_blank" style=" color:white;">SAINTWOODS {% now 'Y' %} ®</a> All rights reserved.
+          <br />
+          No part of this site maybe used or reproduced in whole or in part
+          <br />
+          without the written consent of Copyright Owner
+        </font>
+        <br />
+        
+        <img src="{% static 'rainbow_thinline.gif' %}" width="270px" />
+      </div>
+    </center>
+    <script src="{% static 'time.js' %}"></script>
+  </body>
+</html>
